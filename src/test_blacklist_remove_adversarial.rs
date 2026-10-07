@@ -52,7 +52,12 @@ fn setup() -> (Env, Address, Address, Address, Address) {
     (env, contract_id, issuer, admin, token)
 }
 
-fn blacklist(env: &Env, contract_id: &Address, issuer: &Address, token: &Address) -> SdkVec<Address> {
+fn blacklist(
+    env: &Env,
+    contract_id: &Address,
+    issuer: &Address,
+    token: &Address,
+) -> SdkVec<Address> {
     RevoraRevenueShareClient::new(env, contract_id).get_blacklist(issuer, &NS, token)
 }
 
